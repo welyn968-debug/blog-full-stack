@@ -7,6 +7,8 @@ import {signUpSchema} from "@/app/schemas/auth"
 import {Field, FieldError, FieldGroup, FieldLabel} from "@/components/ui/field";
 import {Input} from "@/components/ui/input";
 import {Button} from "@/components/ui/button";
+import {authClient} from "@/lib/auth-client";
+import * as z from "zod";
 
 
 export default function SignupPage (){
@@ -21,8 +23,12 @@ export default function SignupPage (){
         }
     })
 
-    function onSubmit(data: any){
-        console.log(data);
+    async function onSubmit(data:z.infer<typeof signUpSchema>){
+        await authClient.signUp.email({
+            username: data.username,
+            email: data.email,
+            password: data.password,
+        });
     }
 
 
