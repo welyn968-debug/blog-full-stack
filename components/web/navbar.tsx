@@ -16,7 +16,7 @@ export function Navbar () {
 
             <div className="ml-10 space-x-4">
                 <Link className={buttonVariants({variant: "ghost"})} href="/home">Home</Link>
-                <Link className={buttonVariants({variant: "ghost"})} href="/about">About</Link>
+                <Link className={buttonVariants({variant: "ghost"})} href="/blog">Blog</Link>
                 <Link className={buttonVariants({variant: "ghost"})} href="/services">Services</Link>
                 <Link className={buttonVariants({variant: "ghost"})} href="/contact">Contact</Link>
             </div>
